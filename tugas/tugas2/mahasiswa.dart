@@ -24,4 +24,14 @@ void main(List<String> args) {
     jawab = stdin.readLineSync();
     (jawab == 'Y') ? ulang = false : ulang = true;
   }
+
+
+ print('============================================================');
+  print('NIM\t\t NAMA\t\t NILAI ANGKA\t NILAI HURUF');
+  print('============================================================');
+  for (var mhs in list_mahasiswa) {
+    print(
+        '${mhs['nim']}\t\t ${mhs['nama']}\t\t ${mhs['nilai_angka']}\t\t ${mhs['nilai_huruf']}');
+  }
+  print('============================================================');
 }
