@@ -1,36 +1,27 @@
 import 'dart:io';
+import 'bin/mahasiswa1.dart';
 
-main() {
+void main(List<String> args) {
+  Mahasiswa mahasiswa;
+  var list_mahasiswa = [];
+  String jawab;
+  var ulang = true;
 
-print("Inputkan Data Mahasiswa");
+  print('Inputkan data mahasiswa');
+  mahasiswa = Mahasiswa();
 
-  stdout.write("Masukkan Nim: ");
-  int nim = int.parse(stdin.readLineSync());
-  stdout.write("Masukkan Nama : ");
-  String nama = stdin.readLineSync();
-  stdout.write("Masukkan Nilai : ");
-  int nilai = int.parse(stdin.readLineSync());
+  while (ulang) {
+    stdout.write('NIM: ');
+    mahasiswa.nim = stdin.readLineSync();
+    stdout.write('Nama: ');
+    mahasiswa.nama = stdin.readLineSync();
+    stdout.write('Nilai Angka: ');
+    mahasiswa.nilai_angka = int.tryParse(stdin.readLineSync());
 
+    list_mahasiswa.add(mahasiswa.toMap());
 
-  int i = 0; 
-  i <= nim;
-  String n = "";
-  n == nama;
-  int j = 0;
-  j <= nilai;
-
-
-  
-  bool ulang = true;
-
-  while(ulang){
-    stdout.write("Apakah anda mau keluar (y/t): ");
-    String jawaban = stdin.readLineSync();
-
-    i++;
-    if (jawaban.toUpperCase() == "Y") ulang = false;
+    stdout.write('Berhenti input data? Y|T : ');
+    jawab = stdin.readLineSync();
+    (jawab == 'Y') ? ulang = false : ulang = true;
   }
-
-  print("Total perulangan: $i");
-
 }

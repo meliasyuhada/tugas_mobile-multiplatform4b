@@ -1,0 +1,3 @@
+class MasyarakatMhs {
+  String nama;
+}
